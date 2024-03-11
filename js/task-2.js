@@ -32,16 +32,16 @@ const gallery = document.querySelector('.gallery');
 
 // =============== SOLUTION 1: FOR EACH =============== 
 
-images.forEach(element => {
-  const galleryItem = document.createElement('li');
-  gallery.append(galleryItem);
+// images.forEach(element => {
+//   const galleryItem = document.createElement('li');
+//   gallery.append(galleryItem);
 
-  const galleryItemImage = document.createElement('img');
-  galleryItemImage.classList.add('image');
-  galleryItemImage.setAttribute('src', element.url);
-  galleryItemImage.setAttribute('alt', element.alt);
-  galleryItem.append(galleryItemImage);
-});
+//   const galleryItemImage = document.createElement('img');
+//   galleryItemImage.classList.add('image');
+//   galleryItemImage.setAttribute('src', element.url);
+//   galleryItemImage.setAttribute('alt', element.alt);
+//   galleryItem.append(galleryItemImage);
+// });
 
 
 // =============== SOLUTION 2: MAP ===============
@@ -59,10 +59,10 @@ images.forEach(element => {
 
 // =============== SOLUTION 3: ШАБЛОННИЙ РЯДОК ===============
   
-// const galleryMarkup = images
-//   .map(element => {
-//   return `<li><img src=${element.url} alt=${element.alt}></li>`;
-//  })
-//   .join('');
-// gallery.insertAdjacentHTML('beforeend', galleryMarkup);
+const galleryMarkup = images
+  .map(element => {
+  return `<li><img src=${element.url} alt=${element.alt}></li>`;
+ })
+  .join('');
+gallery.insertAdjacentHTML('beforeend', galleryMarkup);
 
